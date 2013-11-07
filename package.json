@@ -1,0 +1,9 @@
+{
+    "name": "basic-canvas-engine",
+    "version": "0.0.1",
+    "author": "David Campion <gasolinewaltz@gmail.com>",
+    "description": "a starting point for a game engine to be used with some MVC framework.",
+    "dependencies": {
+
+    }
+}
