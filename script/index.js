@@ -1,15 +1,15 @@
-require('vendor/underscore.js');
-require('vendor/eveline.js');
-require('vendor/canvasquery.js');
+require('vendor/underscore');
+require('vendor/eveline');
+require('vendor/canvasquery');
 
-require('engine/engine.js');
-require('engine/loader.js');
-require('engine/assets.js');
+require('engine/engine');
+require('engine/loader');
+require('engine/assets');
 
-require('engine/application.js');
-require('engine/scene.js');
-require('engine/collection.js');
+require('engine/application');
+require('engine/scene');
+require('engine/collection');
 
-require('engine/main.js');
-require('engine/entities.js');
-require('engine/game.js');
+require('engine/main');
+require('engine/entities');
+require('game');
