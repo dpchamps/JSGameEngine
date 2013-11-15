@@ -19,14 +19,20 @@ ENGINE.Application = function(args) {
 	/*
 	 * add it to the document
 	 */
-	//this.layer.appendTo("body");
+
+    /*TODO: this needs to be changed to allow for a variable on the apps creation,
+        defaulting to body, if nothing is provided.
+    */
     this.layer.appendTo(".jumbotron");
 	
 
 	
 	/*
 	 * create loader and assets manager
+	 *
+	 * TODO: assets is the only module that needs to be exposed, therefore loader will exist as a private variable.
 	 */
+
 	this.loader = new ENGINE.Loader();
 	this.assets = new ENGINE.Assets(this.loader);
 	
