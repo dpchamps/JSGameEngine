@@ -1,22 +1,28 @@
-// var app = require('application');
-var app = new ENGINE.Application({
-	
-	//get the width and height of the window
-	snakeSize: 17,
-    gameBoard: 25,
+/*
+i suppose that you would use this as follows:
+  var scene1 = require('scene1');
+  etc...
 
+  var app = require('game');
+  app({
+    //default args
+    scene1 : scene1,
+    anotherScene : anotherScene
+    etc...
 
-	oncreate: function(){
-        this.width = this.snakeSize * this.gameBoard;
-        this.height = this.snakeSize * this.gameBoard;
-        //this.layer =  cq(this.width, this.height);
-        /* load anything to let the objects being create before calling ready */
+    onready: function{
+        this.selectScene(this.scene1);
+    }
+  });
+ */
+var app = require('game');
+app({
+    width: 200,
+    height: 350,
+    oncreate: function(){
         this.loader.foo(500);
     },
-	
-	//when the assets are loaded, select the game screen
-	onready: function(){
-		this.selectScene(this.startScreen);
-	}
-
+    onready: function(){
+        this.selectScene(this.startScreen);
+    }
 });
