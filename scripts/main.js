@@ -1,3 +1,4 @@
+// var app = require('application');
 var app = new ENGINE.Application({
 	
 	//get the width and height of the window

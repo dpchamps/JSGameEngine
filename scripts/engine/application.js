@@ -24,7 +24,7 @@ ENGINE.Application = function(args) {
         defaulting to body, if nothing is provided.
     */
     this.layer.appendTo(".jumbotron");
-	
+
 
 	
 	/*
@@ -76,9 +76,7 @@ ENGINE.Application.prototype = {
 		 */
 		this.dispatch("onenter");
 	},
-	/*
-	 * Now pass the events from eveline to the current scene.
-	 */
+
 	
 	/*
 	 * game logic step (setInterval)
@@ -106,3 +104,14 @@ ENGINE.Application.prototype = {
 	 * add more events at a later time
 	 */
 };
+
+/*
+let's attempt to get this to work with browserify,
+and also make it accessible to the server
+ */
+if(typeof exports !== 'undefined'){
+    if (typeof module !== 'undefined' && module.exports){
+        exports = module.exports = ENGINE.Application;
+    }
+    exports = module.exports = ENGINE.Application;
+}
