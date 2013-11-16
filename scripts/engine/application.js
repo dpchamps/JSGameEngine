@@ -1,7 +1,19 @@
 ENGINE.Application = function(args) {
 	var app = this;
 	
-	_.extend(this, args);
+	_.extend(this, {
+        /*
+            This is where application defaults go, allowed to be
+            overwritten by args
+         */
+        width : 0,
+        height: 0,
+        appendToNode : "body",
+        oncreate: function(){
+            //the absolute default
+            app.loader.foo(500);
+        }
+    } ,args);
 	
 	/*
 	 * create canvas wrapper - we will draw on it.
@@ -14,23 +26,21 @@ ENGINE.Application = function(args) {
          * 	then if the property exists, binds the callback to the proper DOM event
      */
     //                              events, context
-	this.layer = cq(425,425).framework(this,this);
+	if(this.width && this.height){
+        this.layer = cq(this.width, this.height);
+    }else{
+        this.layer = cq()
+    }
+    this.layer.framework(this,this);
 	
 	/*
-	 * add it to the document
-	 */
-
-    /*TODO: this needs to be changed to allow for a variable on the apps creation,
+	 *  add it to the document
         defaulting to body, if nothing is provided.
     */
-    this.layer.appendTo(".jumbotron");
+    this.layer.appendTo(this.appendToNode);
 
-
-	
 	/*
 	 * create loader and assets manager
-	 *
-	 * TODO: assets is the only module that needs to be exposed, therefore loader will exist as a private variable.
 	 */
 
 	this.loader = new ENGINE.Loader();
@@ -77,32 +87,64 @@ ENGINE.Application.prototype = {
 		this.dispatch("onenter");
 	},
 
-	
-	/*
-	 * game logic step (setInterval)
-	 */
-	onstep: function(delta){
-		this.dispatch("onstep", delta);
-	},
-	/*
-	 * rendering loop (requestAnimationFrame)
-	 */
-	onrender: function(delta){
-		this.dispatch("onrender", delta);
-	},
-	/*
-	 * the key gets translated to a string
-	 */
-	onkeydown: function(key){
-		this.dispatch("onkeydown", key);
-	},
-    onmouseup: function(x,y){
-        this.dispatch("onmouseup", x,y);
-    }
+    /* game logic loop */
+    onstep: function(delta, time) {
+        this.dispatch("onstep", delta, time);
+    },
 
-	/*
-	 * add more events at a later time
-	 */
+    /* rendering loop */
+    onrender: function(delta, time) {
+        this.dispatch("onrender", delta, time);
+    },
+
+    /* window resize */
+    onresize: function(width, height) {
+        this.dispatch("onresize", width, height);
+    },
+
+    /* mouse events */
+    onmousedown: function(x, y) {
+        this.dispatch("onmousedown", x, y);
+    },
+    onmouseup: function(x, y) {
+        this.dispatch("onmouseup", x, y);
+    },
+    onmousemove: function(x, y) {
+        this.dispatch("onmousemove", x, y);
+    },
+    onmousewheel: function(delta) {
+        this.dispatch("onmousewheel", delta);
+    },
+
+    /* touch events */
+    ontouchstart: function(x, y, touches) {
+        this.dispatch("ontouchstart", x, y, touches);
+    },
+    ontouchend: function(x, y, touches) {
+        this.dispatch("ontouchend", x, y, touches);
+    },
+    ontouchmove: function(x, y, touches) {
+        this.dispatch("ontouchmove", x, y, touches);
+    },
+
+    /* keyboard events */
+    onkeydown: function(key) {
+        this.dispatch("onkeydown", key);
+    },
+    onkeyup: function(key) {
+        this.dispatch("onkeyup", key);
+    },
+
+    /* gamepad events (chrome only) */
+    ongamepaddown: function(button, gamepad) {
+        this.dispatch("ongamepaddown", button, gamepad);
+    },
+    ongamepadup: function(button, gamepad) {
+        this.dispatch("ongamepadup", button, gamepad);
+    },
+    ongamepadmove: function(xAxis, yAxis, gamepad) {
+        this.dispatch("ongamepadmove", xAxis, yAxis, gamepad);
+    }
 };
 
 /*
