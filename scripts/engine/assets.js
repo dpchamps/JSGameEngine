@@ -1,4 +1,4 @@
-ENGINE.Assets = function(loader){
+Assets = function(loader){
 	
 	//make use of dat loader
 	this.loader = loader;
@@ -14,7 +14,7 @@ ENGINE.Assets = function(loader){
 	};
 };
 
-ENGINE.Assets.prototype = {
+Assets.prototype = {
 	/*
 	 * get image by key, where the key is created by removing the filename
 	 * e.g, 

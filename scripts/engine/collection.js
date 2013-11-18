@@ -1,4 +1,4 @@
-ENGINE.Collection = function(parent){
+Collection = function(parent){
 	/*
 	 * the object that manages the collection
 	 */
@@ -19,9 +19,9 @@ ENGINE.Collection = function(parent){
  * copy array proto
  */
 
-ENGINE.Collection.prototype = new Array;
+Collection.prototype = new Array;
 
-_.extend(ENGINE.Collection.prototype, {
+_.extend(Collection.prototype, {
 	
 	/*
 	 * creates new object instance with given args and pushes it to the collection

@@ -1,4 +1,4 @@
-ENGINE.Loader = function(){
+Loader = function(){
 	
 	// all of the items to load
 	this.total = 0;
@@ -16,7 +16,7 @@ ENGINE.Loader = function(){
 	this.loading = false;
 };
 
-ENGINE.Loader.prototype = {
+Loader.prototype = {
 	
 	add: function() {
 		this.loading = true;

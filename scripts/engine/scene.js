@@ -1,10 +1,10 @@
-ENGINE.Scene = function(args){
+Scene = function(args){
 	_.extend(this, args);
 	
 	if (this.oncreate) this.oncreate();
 };
 
-ENGINE.Scene.prototype = {
+Scene.prototype = {
 	/*
 	 * default reactions to events so we don't have to bother
 	 * whether the action has been provided or not
