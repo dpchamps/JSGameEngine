@@ -147,10 +147,7 @@ ENGINE.Application.prototype = {
     }
 };
 
-/*
-let's attempt to get this to work with browserify,
-and also make it accessible to the server
- */
+
 if(typeof exports !== 'undefined'){
     if (typeof module !== 'undefined' && module.exports){
         exports = module.exports = ENGINE.Application;
