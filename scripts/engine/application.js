@@ -148,9 +148,5 @@ ENGINE.Application.prototype = {
 };
 
 
-if(typeof exports !== 'undefined'){
-    if (typeof module !== 'undefined' && module.exports){
-        exports = module.exports = Application;
-    }
-    exports = module.exports = Application;
-}
+
+module.exports = Application;

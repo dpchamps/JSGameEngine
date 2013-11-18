@@ -15,3 +15,5 @@ Scene.prototype = {
 	onrender:	 function() { },
 	onstep:		 function() { }
 };
+
+module.exports = Scene;

@@ -48,3 +48,5 @@ Assets.prototype = {
 		image.src = this.paths.images + filename;
 	}
 };
+
+module.exports = Assets;

@@ -118,3 +118,5 @@ _.extend(Collection.prototype, {
 	
 	
 });
+
+module.exports = Collection;

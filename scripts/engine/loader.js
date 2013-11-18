@@ -118,3 +118,5 @@ Loader.prototype = {
 		console.log("unable to load ", source);
 	}
 };
+
+module.exports = loader;
