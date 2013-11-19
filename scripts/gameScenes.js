@@ -6,9 +6,7 @@ var gameScenes = function(parent){
     var app = parent;
 
     /*
-    var scene1 = require('assets/scenes/scene1');
-    app.scene1 = scene1(app);
-
+    app.scene1 = require('assets/scenes/scene1')(app);
     etc..
      */
 }

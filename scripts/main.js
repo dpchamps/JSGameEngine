@@ -14,7 +14,12 @@
             this.selectScene(this.startScreen);
         }
     });
-    var attachScenes = require('./gameScenes');
-    attachScenes(app);
+    /*
+    this could be done by finger here, if there are only a
+    handful of scenes.
+    I.E
+        app.scene1 = require('assets/scenes/scene1')(app);
+     */
+    var attachScenes = require('./gameScenes')(app);
 }());
 
