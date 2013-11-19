@@ -1,5 +1,5 @@
-Scene = function(args){
-	_.extend(this, args);
+Scene = function(parent, args){
+    _.extend(this, args);
 	
 	if (this.oncreate) this.oncreate();
 };
