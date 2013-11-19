@@ -42,7 +42,8 @@ var Application = function(args) {
 	/*
 	 * create loader and assets manager
 	 */
-
+    var Loader = require('engine/loader');
+    var Assets = require('engine/assets');
 	this.loader = new ENGINE.Loader();
 	this.assets = new ENGINE.Assets(this.loader);
 	
@@ -61,7 +62,7 @@ var Application = function(args) {
 	
 };
 
-ENGINE.Application.prototype = {
+Application.prototype = {
 	/*
 	 * calls the method in current scene with given arguments, for example:
 	 * 	this.dispacth("onmousemove", 32, 64);

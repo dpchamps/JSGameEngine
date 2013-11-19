@@ -15,7 +15,7 @@ i suppose that you would use this as follows:
     }
   });
  */
-var app = require('game');
+var app = require('engine');
 app({
     width: 200,
     height: 350,
