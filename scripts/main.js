@@ -3,7 +3,7 @@
    Then we attach the scenes to the current app;
  */
 (function(){
-    var App = require('engine/application');
+    var App = require('./engine/application');
     var app = new App({
         width: 200,
         height: 350,

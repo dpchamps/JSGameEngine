@@ -42,8 +42,8 @@ var Application = function(args) {
 	/*
 	 * create loader and assets manager
 	 */
-    var Loader = require('engine/loader');
-    var Assets = require('engine/assets');
+    var Loader = require('./loader');
+    var Assets = require('./assets');
 	this.loader = new ENGINE.Loader();
 	this.assets = new ENGINE.Assets(this.loader);
 	
